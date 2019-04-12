@@ -1,5 +1,11 @@
-<h2>All Heroines</h2>
-
+<h2 align="center">All Heroines</h2>
+<br>
+<br>
+<form action="/heroines" method="get">
+  <input type="text" name="query" placeholder="Enter power here..." />
+  <input type="submit" value="Search!" />
+</form>
+<br>
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
