@@ -28,7 +28,7 @@ Read through the instructions to get a sense of the scope of this code challenge
 
 ![Showcasing the basic heroines and powers routes](heroines_and_powers.gif)
 
-1. Create the associations between models. You may have to alter the current schema to get your code working. If you've set up your relationships properly, you should be able to run `rake db:seed` without errors, and confirm in console that the heroines and powers have been created with the proper relations.
+<!-- 1. Create the associations between models. You may have to alter the current schema to get your code working. If you've set up your relationships properly, you should be able to run `rake db:seed` without errors, and confirm in console that the heroines and powers have been created with the proper relations. -->
 
 2. On the heroines index page, a heroine's super name should link to that heroine's show page.
 
