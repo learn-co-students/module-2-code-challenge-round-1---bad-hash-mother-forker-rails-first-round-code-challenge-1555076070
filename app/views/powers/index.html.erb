@@ -3,10 +3,13 @@
 <ul>
   <% @powers.each do |power| %>
     <li>
-      <%= power.name %>
+      <%= link_to power.name, power_path(power) %>
       <br>
       Description: <%= power.description %>
     </li>
     <br>
   <% end %>
 </ul>
+<br>
+<br>
+<p><%= link_to "Click to view current heroines!", heroines_path %></p>

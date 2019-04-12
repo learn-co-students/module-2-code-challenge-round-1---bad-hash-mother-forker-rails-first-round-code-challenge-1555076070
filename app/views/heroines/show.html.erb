@@ -1,0 +1,10 @@
+<br>
+<h1 align="center" style="color: blue"><b><u> <%= @heroine.name %> 's Information</u>:</b></h1>
+<br>
+<br>
+<p><u>Super Name</u>: <%= @heroine.super_name %></p>
+<p><u>Power</u>: <%= link_to @heroine.power.name, power_path(@heroine.power) %></p>
+<br>
+<br>
+<p align="center"><%= link_to "Click to go back to hero list", heroines_path %></p>
+<p align="center"><%= link_to "Click to go to the powers list", powers_path %></p>
