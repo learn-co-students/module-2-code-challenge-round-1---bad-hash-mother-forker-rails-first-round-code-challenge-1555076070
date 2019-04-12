@@ -21,6 +21,12 @@ class HeroinesController < ApplicationController
     end
   end
 
+  def search
+    @power = Power.find(params[:search])
+    @heroines = Heroine.where("power_id is ?", @power )
+    render :index
+  end
+
   private 
   def heroine_params
     params.require(:heroine).permit(:name, :super_name, :power_id)

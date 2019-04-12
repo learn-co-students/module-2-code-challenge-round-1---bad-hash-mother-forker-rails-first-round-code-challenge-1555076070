@@ -1,5 +1,14 @@
 <h2>All Heroines</h2>
 
+<%= form_tag("/search", method: 'get') do %>
+  <%= label_tag(:q, "Search by Power") %>
+  <%= select_tag :search, options_from_collection_for_select(Power.all, :id, :name) %>
+  <%= submit_tag "Search!" %>
+<% end %>
+
+<% if @power %>
+  <h3>Heroes with the power of <%= @power.name.titleize %>.</h3>
+  <% end %>
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
