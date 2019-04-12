@@ -1,10 +1,20 @@
-<h2>All Heroines</h2>
-
+<h2 align="center">All Heroines</h2>
+<br>
+<br>
+<form action="/heroines" method="get">
+  <input type="text" name="query" placeholder="Enter power here..." />
+  <input type="submit" value="Search!" />
+</form>
+<br>
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
 </ul>
+<br>
+<br>
+<p><%= link_to "Click to view powers list!", powers_path %></p>
+<p><%= link_to "Or click here to create a new heroine!!!", new_heroine_path %></p>

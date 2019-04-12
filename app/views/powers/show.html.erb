@@ -1,0 +1,14 @@
+<br>
+<h1 align="center" style="color: purple"><b><u> <%= @power.name.capitalize %> 's details</u>:</b></h1>
+<br>
+<br>
+<p><u>Description</u>: <%= @power.description %></p>
+<p><u>Known heroines with this power</u>:</p>
+<ul>
+    <% @power.heroines.each do |heroine| %>
+    <li><p><%= link_to heroine.super_name, heroine_path(heroine) %></p></li>
+    <% end %>
+</ul>
+<br>
+<br>
+<%= link_to "Back to super powers list.", powers_path %>
