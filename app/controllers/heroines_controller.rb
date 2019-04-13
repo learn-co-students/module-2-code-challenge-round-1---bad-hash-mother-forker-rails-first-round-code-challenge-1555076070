@@ -1,11 +1,18 @@
 class HeroinesController < ApplicationController
   def index
-    # if params[:query]
-    #   @heroines = Heroine.where("power LIKE ?", "%#{params[:query]}%")
-    # else
-    #   @heroines = Heroine.all
-    # end
-    @heroines = Heroine.all
+    if params[:query]
+      @powers = Power.where("name LIKE ?", "%#{params[:query]}%")
+      heroines = []
+      @powers.each do |power|
+        power.heroines.each do |hero|
+          heroines << hero
+        end
+      end
+      @heroines = heroines
+    else
+      @heroines = Heroine.all
+    end
+    # @heroines = Heroine.all
   end
 
   def show
