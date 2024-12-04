@@ -1,10 +1,22 @@
-<h2>All Heroines</h2>
-
-<ul>
-  <% @heroines.each do |heroine| %>
-    <li>
-      <%= heroine.super_name %>
-    </li>
-    <br>
-  <% end %>
-</ul>
+<h2 align="center">All Heroines</h2>
+<br>
+<form action="/heroines" method="get">
+  <input type="text" name="query" placeholder="Enter power here..." />
+  <input type="submit" value="Search!" />
+</form>
+<br>
+<% if @heroines.size == 0 %>
+  <p align="center" style="color:red"> No heroines were found with that power...</p>
+<% else %>
+  <ul>
+    <% @heroines.each do |heroine| %>
+      <li>
+        <p>
+          <%= link_to heroine.super_name, heroine_path(heroine) %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<br>
+<p><%= link_to "Or click here to create a new heroine!!!", new_heroine_path %></p>

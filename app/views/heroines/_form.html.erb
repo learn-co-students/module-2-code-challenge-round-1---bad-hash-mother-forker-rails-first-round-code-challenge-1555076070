@@ -1,0 +1,25 @@
+<% if @heroine.errors.any? %>
+    <div id="error_explanation">
+    <h2 style="color: red">Oops, there were some issues:</h2>
+    <ul>
+        <% @heroine.errors.full_messages.each do |message| %>
+        <li stlye="color: red"><%= message %></li>
+        <% end %>
+    </ul>
+    </div>
+    <br>
+    <br>
+<% end %>
+
+
+<%= form_for(@heroine) do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :super_name %><br>
+    <%= f.text_field :super_name %><br><br>
+    <%= f.label "Choose your power:" %>
+    <%= f.collection_select(:power_id, Power.all, :id, :name, prompt: true) %>
+    <br>
+    <br>
+    <%= f.submit %>
+<% end %>
